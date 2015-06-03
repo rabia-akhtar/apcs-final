@@ -1,5 +1,5 @@
 # apcs-final
-Graphing Calculator 
+Calculator 
 ------
 Rabia Akhtar and Fanny Ma <br>
 Period 1<br>
