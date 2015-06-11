@@ -3,12 +3,13 @@ import java.awt.*;
 import java.awt.event.*;
 public class Calc extends JFrame {
     /*
-    By Rabia Akhtar and Fanny Ma
+      By Rabia Akhtar and Fanny Ma
     */
     double firstnum;
     double secondnum;
     double result;
     String operation;
+   
     private JButton btn0;
     private JButton btn1;
     private JButton btn2;
@@ -20,15 +21,24 @@ public class Calc extends JFrame {
     private JButton btn8;
     private JButton btn9;
     private JButton btnclear;
+    private JButton btncos;
+    private JButton btndel;
     private JButton btndivide;
     private JButton btndot;
+    private JButton btne;
     private JButton btnequals;
+    private JButton btnln;
+    private JButton btnlog;
     private JButton btnminus;
+    private JButton btnpi;
     private JButton btnplus;
+    private JButton btnplusminus;
+    private JButton btnpower;
+    private JButton btnroot;
+    private JButton btnsin;
+    private JButton btntan;
     private JButton btntimes;
-    private JButton jButton1;
     private JTextField txtDisplay;
-    
   
     public Calc() {
 	setup();
@@ -54,115 +64,125 @@ public class Calc extends JFrame {
         btntimes = new JButton();
         btnminus = new JButton();
         btnequals = new JButton();
-
+        btnplusminus = new JButton();
+        btntan = new JButton();
+        btnsin = new JButton();
+        btncos = new JButton();
+        btnlog = new JButton();
+        btnln = new JButton();
+        btne = new JButton();
+        btndel = new JButton();
+        btnroot = new JButton();
+        btnpower = new JButton();
+        btnpi = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        txtDisplay.setFont(new java.awt.Font("MS Gothic", 0, 24)); 
+        txtDisplay.setFont(new Font("BatangChe", 1, 14)); 
         txtDisplay.setHorizontalAlignment(JTextField.RIGHT);
         txtDisplay.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                txtDisplayActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    txtDisplayActionPerformed(evt);
+		}
+	    });
 
-        btn1.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn1.setFont(new Font("BatangChe", 1, 14)); 
         btn1.setText("1");
         btn1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn1ActionPerformed(evt);
+		}
+	    });
 
-        btn2.setFont(new java.awt.Font("Tahoma", 1, 24));
+        btn2.setFont(new Font("BatangChe", 1, 14)); 
         btn2.setText("2");
         btn2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn2ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn2ActionPerformed(evt);
+		}
+	    });
 
-        btn3.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn3.setFont(new Font("BatangChe", 1, 14)); 
         btn3.setText("3");
         btn3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn3ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn3ActionPerformed(evt);
+		}
+	    });
 
-        btn4.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn4.setFont(new Font("BatangChe", 1, 14)); 
         btn4.setText("4");
         btn4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn4ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn4ActionPerformed(evt);
+		}
+	    });
 
-        btn5.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn5.setFont(new Font("BatangChe", 1, 14)); 
         btn5.setText("5");
         btn5.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn5ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn5ActionPerformed(evt);
+		}
+	    });
 
-        btn6.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn6.setFont(new Font("BatangChe", 1, 14)); 
         btn6.setText("6");
         btn6.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn6ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn6ActionPerformed(evt);
+		}
+	    });
 
-        btn7.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn7.setFont(new Font("BatangChe", 1, 14)); 
         btn7.setText("7");
         btn7.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn7ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn7ActionPerformed(evt);
+		}
+	    });
 
-        btn8.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn8.setFont(new Font("BatangChe", 1, 14)); 
         btn8.setText("8");
         btn8.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn8ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn8ActionPerformed(evt);
+		}
+	    });
 
-        btn9.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn9.setFont(new Font("BatangChe", 1, 14)); 
         btn9.setText("9");
         btn9.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn9ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn9ActionPerformed(evt);
+		}
+	    });
 
-        btndot.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btndot.setFont(new Font("BatangChe", 1, 14)); 
         btndot.setText(".");
         btndot.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btndotActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btndotActionPerformed(evt);
+		}
+	    });
 
-        btnclear.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btnclear.setFont(new Font("BatangChe", 1, 14)); 
         btnclear.setText("C");
         btnclear.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btnclearActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btnclearActionPerformed(evt);
+		}
+	    });
 
-        btn0.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btn0.setFont(new Font("BatangChe", 1, 14)); 
         btn0.setText("0");
         btn0.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btn0ActionPerformed(evt);
-            }
-        });
+		public void actionPerformed(ActionEvent evt) {
+		    btn0ActionPerformed(evt);
+		}
+	    });
 
-        btndivide.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btndivide.setFont(new Font("BatangChe", 1, 14)); 
         btndivide.setText("/");
         btndivide.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -170,7 +190,7 @@ public class Calc extends JFrame {
             }
         });
 
-        btnplus.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btnplus.setFont(new Font("BatangChe", 1, 14)); 
         btnplus.setText("+");
         btnplus.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -178,7 +198,7 @@ public class Calc extends JFrame {
             }
         });
 
-        btntimes.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btntimes.setFont(new Font("BatangChe", 1, 14)); 
         btntimes.setText("*");
         btntimes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -186,7 +206,7 @@ public class Calc extends JFrame {
             }
         });
 
-        btnminus.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btnminus.setFont(new Font("BatangChe", 1, 14)); 
         btnminus.setText("-");
         btnminus.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -194,7 +214,7 @@ public class Calc extends JFrame {
             }
         });
 
-        btnequals.setFont(new java.awt.Font("Tahoma", 1, 24)); 
+        btnequals.setFont(new Font("BatangChe", 1, 14)); 
         btnequals.setText("=");
         btnequals.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -202,55 +222,183 @@ public class Calc extends JFrame {
             }
         });
 
-        GroupLayout layout = new GroupLayout(getContentPane());
+        btnplusminus.setFont(new Font("BatangChe", 1, 14)); 
+        btnplusminus.setText("(-)");
+        btnplusminus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnplusminusActionPerformed(evt);
+            }
+        });
+
+        btntan.setFont(new Font("BatangChe", 1, 14)); 
+        btntan.setText("Tan");
+        btntan.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btntanActionPerformed(evt);
+            }
+        });
+
+        btnsin.setFont(new Font("BatangChe", 1, 14)); 
+        btnsin.setText("Sin");
+        btnsin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnsinActionPerformed(evt);
+            }
+        });
+
+        btncos.setFont(new Font("BatangChe", 1, 14)); 
+        btncos.setText("Cos");
+        btncos.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btncosActionPerformed(evt);
+            }
+        });
+
+        btnlog.setFont(new Font("BatangChe", 1, 14)); 
+        btnlog.setText("Log");
+        btnlog.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnlogActionPerformed(evt);
+            }
+        });
+
+        btnln.setFont(new Font("BatangChe", 1, 14)); 
+        btnln.setText("Ln");
+        btnln.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnlnActionPerformed(evt);
+            }
+        });
+
+        btne.setFont(new Font("BatangChe", 1, 14)); 
+        btne.setText("e^x");
+        btne.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btneActionPerformed(evt);
+            }
+        });
+
+        btndel.setFont(new Font("BatangChe", 1, 14)); 
+        btndel.setText("Del");
+        btndel.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btndelActionPerformed(evt);
+            }
+        });
+
+        btnroot.setFont(new Font("BatangChe", 1, 14)); 
+        btnroot.setText("√");
+        btnroot.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnrootActionPerformed(evt);
+            }
+        });
+
+        btnpower.setFont(new Font("BatangChe", 1, 14)); 
+        btnpower.setText("^");
+        btnpower.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnpowerActionPerformed(evt);
+            }
+        });
+
+        btnpi.setFont(new Font("BatangChe", 1, 14)); 
+        btnpi.setText("π");
+        btnpi.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnpiActionPerformed(evt);
+            }
+        });
+
+
+ GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnequals, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDisplay)
+            .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btn1, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btn2, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btn3, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn7, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn8, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn4, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn5, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn6, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn0, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btndot, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnplusminus, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btntimes, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnplus, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnminus, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btndivide, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addComponent(btndel, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnequals, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnsin, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btntan, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btncos, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnlog, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnln, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDisplay))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn1, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn2, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn3, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btn7, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn8, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btn4, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn5, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btn6, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btn0, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btndot, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnclear, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btne, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btntimes, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnplus, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                            .addComponent(btnminus, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                            .addComponent(btndivide, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnpi, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnroot, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnpower, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnclear, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtDisplay, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(txtDisplay, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(btnsin, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(btntan, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btncos, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnlog, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnln, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(btne, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnroot, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnpower, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnpi, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnclear, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -271,21 +419,25 @@ public class Calc extends JFrame {
                             .addComponent(btn7, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnclear, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
                             .addComponent(btndot, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn0, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn0, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnplusminus, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnplus, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(btntimes, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnplus, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btndel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btndivide, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnequals, GroupLayout.PREFERRED_SIZE, 45,GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btntimes, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btndivide, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnequals, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))))
+                .addGap(298, 298, 298))
         );
 
         pack();
+
     }
 
     private void txtDisplayActionPerformed(ActionEvent evt) {
@@ -413,7 +565,38 @@ public class Calc extends JFrame {
         
     }
 
-  
+    private void btnplusminusActionPerformed(ActionEvent evt) {
+    }
+
+    private void btntanActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnsinActionPerformed(ActionEvent evt) {
+    }
+
+    private void btncosActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnlogActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnlnActionPerformed(ActionEvent evt) {
+    }
+
+    private void btneActionPerformed(ActionEvent evt) {
+    }
+
+    private void btndelActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnrootActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnpowerActionPerformed(ActionEvent evt) {
+    }
+
+    private void btnpiActionPerformed(ActionEvent evt) {
+    }
     public static void main(String args[]) {
 
 	new Calc().setVisible(true);
