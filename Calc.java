@@ -303,7 +303,7 @@ public class Calc extends JFrame {
         });
 
         btnpi.setFont(new Font("BatangChe", 1, 14)); 
-        btnpi.setText("π");
+        btnpi.setText("PI");
         btnpi.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 btnpiActionPerformed(evt);
@@ -562,40 +562,78 @@ public class Calc extends JFrame {
             answer = Double.toString(result);
             txtDisplay.setText(answer);
         }
+        if (operation.equals("^")){
+            result = java.lang.Math.pow(firstnum,secondnum);
+            answer = Double.toString(result);
+            txtDisplay.setText(answer);
+        }
         
     }
 
     private void btnplusminusActionPerformed(ActionEvent evt) {
+        String takein;
+        takein = Double.toString(Double.parseDouble(txtDisplay.getText())*(-1));
+        txtDisplay.setText(takein);
     }
 
     private void btntanActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.tan(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
     }
 
     private void btnsinActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.sin(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
     }
 
     private void btncosActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.cos(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
     }
 
     private void btnlogActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.log10(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
     }
 
     private void btnlnActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.log(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
     }
 
     private void btneActionPerformed(ActionEvent evt) {
+       	String takein;
+        takein = Double.toString(java.lang.Math.pow((java.lang.Math.E),(Double.parseDouble(txtDisplay.getText()))) );
+        txtDisplay.setText(takein);
     }
 
     private void btndelActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = txtDisplay.getText();
+	takein = takein.substring(0,takein.length()-1);
+        txtDisplay.setText(takein);
     }
 
     private void btnrootActionPerformed(ActionEvent evt) {
+	String takein;
+        takein = Double.toString(java.lang.Math.sqrt(Double.parseDouble(txtDisplay.getText())) );
+        txtDisplay.setText(takein);
+
     }
 
     private void btnpowerActionPerformed(ActionEvent evt) {
+        firstnum = Double.parseDouble(txtDisplay.getText());
+        txtDisplay.setText("");
+        operation = "^";
     }
 
     private void btnpiActionPerformed(ActionEvent evt) {
+	txtDisplay.setText(Double.toString(java.lang.Math.PI));
     }
     public static void main(String args[]) {
 
