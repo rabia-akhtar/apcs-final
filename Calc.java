@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 public class Calc extends JFrame {
     /*
       By Rabia Akhtar and Fanny Ma
@@ -8,6 +11,7 @@ public class Calc extends JFrame {
     double firstnum;
     double secondnum;
     double result;
+    String pending="";
     String operation;
    
     private JButton btn0;
@@ -39,6 +43,7 @@ public class Calc extends JFrame {
     private JButton btntan;
     private JButton btntimes;
     private JTextField txtDisplay;
+    private JTextField sectxtDis;
   
     public Calc() {
 	setup();
@@ -47,6 +52,7 @@ public class Calc extends JFrame {
     private void setup(){    
 
         txtDisplay = new JTextField();
+	sectxtDis = new JTextField();
         btn1 = new JButton();
         btn2 = new JButton();
         btn3 = new JButton();
@@ -85,6 +91,15 @@ public class Calc extends JFrame {
 		    txtDisplayActionPerformed(evt);
 		}
 	    });
+
+        sectxtDis.setFont(new Font("BatangChe", 1, 14)); 
+        sectxtDis.setHorizontalAlignment(JTextField.RIGHT);
+        sectxtDis.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent evt) {
+		    sectxtDisActionPerformed(evt);
+		}
+	    });
+
 
         btn1.setFont(new Font("BatangChe", 1, 14)); 
         btn1.setText("1");
@@ -366,7 +381,8 @@ public class Calc extends JFrame {
                             .addComponent(btnlog, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnln, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtDisplay))
+			      .addComponent(txtDisplay)
+			      .addComponent (sectxtDis))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btne, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -384,6 +400,7 @@ public class Calc extends JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(txtDisplay, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE)
+		      .addComponent(sectxtDis, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(btnsin, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
@@ -441,6 +458,10 @@ public class Calc extends JFrame {
     }
 
     private void txtDisplayActionPerformed(ActionEvent evt) {
+      
+    }
+
+    private void sectxtDisActionPerformed(ActionEvent evt) {
       
     }
 
@@ -513,61 +534,57 @@ public class Calc extends JFrame {
 
     private void btnclearActionPerformed(ActionEvent evt) {
         txtDisplay.setText("");
+	pending = "";
+	sectxtDis.setText(pending);
     }
 
     private void btnplusActionPerformed(ActionEvent evt) {
-        firstnum = Double.parseDouble(txtDisplay.getText());
+        double look= Double.parseDouble(txtDisplay.getText());
+	pending += look + "+";
         txtDisplay.setText("");
-        operation = "+";
+	sectxtDis.setText(pending);
     }
 
     private void btnminusActionPerformed(ActionEvent evt) {
-        firstnum = Double.parseDouble(txtDisplay.getText());
+        double look= Double.parseDouble(txtDisplay.getText());
+	pending += look + "-";
         txtDisplay.setText("");
-        operation = "-";
+	sectxtDis.setText(pending);
     }
 
     private void btntimesActionPerformed(ActionEvent evt) {
-        firstnum = Double.parseDouble(txtDisplay.getText());
+        double look= Double.parseDouble(txtDisplay.getText());
+	pending += look + "*";
         txtDisplay.setText("");
-        operation = "*";
+	sectxtDis.setText(pending);
     }
 
     private void btndivideActionPerformed(ActionEvent evt) {
-        firstnum = Double.parseDouble(txtDisplay.getText());
+        double look= Double.parseDouble(txtDisplay.getText());
+	pending += look + "/";
         txtDisplay.setText("");
-        operation = "/";
+	sectxtDis.setText(pending);
     }
+    /////////////////////////////////////////////////////////////////////////////////////
+    public void btnequalsActionPerformed(ActionEvent evt){
+	pending+= txtDisplay.getText();
+	sectxtDis.setText(pending);
+	txtDisplay.setText(Double.toString(eval(pending)));
+	
+    } 
 
-    private void btnequalsActionPerformed(ActionEvent evt) {
-        secondnum = Double.parseDouble(txtDisplay.getText());
-        String answer;
-        if (operation.equals("+")){
-            result = firstnum + secondnum;
-            answer = Double.toString(result);
-            txtDisplay.setText(answer);
+  static double eval(String infix) {        
+        ScriptEngineManager mgr = new ScriptEngineManager();
+        ScriptEngine engine = mgr.getEngineByName("JavaScript");    
+        String stringResult;
+        try {
+            stringResult = engine.eval(infix).toString();
+            double result = Double.parseDouble(stringResult);      
+            return result;
+        } catch (ScriptException ex) {
         }
-        if (operation.equals("-")){
-            result = firstnum - secondnum;
-            answer = Double.toString(result);
-            txtDisplay.setText(answer);
-        }
-        if (operation.equals("*")){
-            result = firstnum * secondnum;
-            answer = Double.toString(result);
-            txtDisplay.setText(answer);
-        }
-        if (operation.equals("/")){
-            result = firstnum / secondnum;
-            answer = Double.toString(result);
-            txtDisplay.setText(answer);
-        }
-        if (operation.equals("^")){
-            result = java.lang.Math.pow(firstnum,secondnum);
-            answer = Double.toString(result);
-            txtDisplay.setText(answer);
-        }
-        
+        return(-1);
+
     }
 
     private void btnplusminusActionPerformed(ActionEvent evt) {
@@ -575,6 +592,9 @@ public class Calc extends JFrame {
         takein = Double.toString(Double.parseDouble(txtDisplay.getText())*(-1));
         txtDisplay.setText(takein);
     }
+
+
+
 
     private void btntanActionPerformed(ActionEvent evt) {
 	String takein;
