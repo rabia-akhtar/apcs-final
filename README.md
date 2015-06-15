@@ -8,12 +8,11 @@ Period 1<br>
 
 Installation 
 ---------
-
+Compile and run Calc.java <br>
 
 Use
 ----
-
-
+Use the Calculator! <br>
 
 
 Developmental Log 
